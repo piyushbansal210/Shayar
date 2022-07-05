@@ -20,7 +20,7 @@ export default function MainStack() {
                 headerShown: false,
                 headerTitleStyle: {
                     fontFamily: 'Header',
-                    fontSize: 25
+                    fontSize: 23
                 },
                 headerTitleShown: false
             }} >

@@ -12,7 +12,7 @@ const fakePost={
     post:{
         backgroundColor:'#668751',
         title:'This is my First Post',
-        quote:'An Apple A day Keeps the doctor AwayAn Apple A day Keeps the doctor AwayAn Apple A day Keeps the doctor AwayAn Apple A day Keeps the doctor AwayAn Apple A day Keeps the doctor AwayAn Apple A day Keeps the doctor AwayAn Apple A day Keeps the doctor AwayAn Apple A day Keeps the doctor AwayAn Apple A day Keeps the doctor AwayAn Apple A day Keeps the doctor AwayAn Apple A day Keeps the doctor AwayAn Apple A day Keeps the doctor AwayAn Apple A day Keeps the doctor AwayAn Apple A day Keeps the doctor AwayAn Apple A day Keeps the doctor AwayAn Apple A day Keeps the doctor AwayAn Apple A day Keeps the doctor AwayAn Apple A day Keeps the doctor AwayAn Apple A day Keeps the doctor AwayAn Apple A day Keeps the doctor AwayAn Apple A day Keeps the doctor AwayAn Apple A day Keeps the doctor AwayAn Apple A day Keeps the doctor AwayAn Apple A day Keeps the doctor AwayAn Apple A day Keeps the doctor AwayAn Apple A day Keeps the doctor Away',
+        quote:'An Apple A day Keeps the doctor Away',
         titleColor:'#FFFFFF',
         quoteColor:'#FFFFFF',
     },

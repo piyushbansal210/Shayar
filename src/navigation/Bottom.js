@@ -30,7 +30,7 @@ export default function Bottom() {
             screenOptions={{
                 headerTitleStyle: {
                     fontFamily: 'Header',
-                    fontSize: 25
+                    fontSize: 23
                 },
                 tabBarStyle: {
                     height: height / 15
