@@ -12,7 +12,7 @@ const fakePost={
     post:{
         backgroundColor:'#668751',
         title:'This is my First Post',
-        quote:'An Apple A day Keeps the doctor Away',
+        quote:'An Apple A day Keeps the doctor AwayAn Apple A day Keeps the doctor AwayAn Apple A day Keeps the doctor AwayAn Apple A day Keeps the doctor AwayAn Apple A day Keeps the doctor AwayAn Apple A day Keeps the doctor AwayAn Apple A day Keeps the doctor AwayAn Apple A day Keeps the doctor AwayAn Apple A day Keeps the doctor AwayAn Apple A day Keeps the doctor AwayAn Apple A day Keeps the doctor AwayAn Apple A day Keeps the doctor AwayAn Apple A day Keeps the doctor AwayAn Apple A day Keeps the doctor AwayAn Apple A day Keeps the doctor AwayAn Apple A day Keeps the doctor AwayAn Apple A day Keeps the doctor AwayAn Apple A day Keeps the doctor AwayAn Apple A day Keeps the doctor AwayAn Apple A day Keeps the doctor AwayAn Apple A day Keeps the doctor AwayAn Apple A day Keeps the doctor AwayAn Apple A day Keeps the doctor AwayAn Apple A day Keeps the doctor AwayAn Apple A day Keeps the doctor AwayAn Apple A day Keeps the doctor Away',
         titleColor:'#FFFFFF',
         quoteColor:'#FFFFFF',
     },
@@ -37,16 +37,16 @@ const fakePost2={
 }
 
 
-export default function Home() {
+export default function Home({navigation}) {
     return (
         <SafeAreaView style={styles.container}>
             <ScrollView>
                 <SB style="dark" />
                 <View style={{height:10}}/>
-                <SinglePost post={fakePost}/>
-                <SinglePost post={fakePost2}/>
-                <SinglePost post={fakePost}/>
-                <SinglePost post={fakePost2}/>
+                <SinglePost navigation={navigation} post={fakePost}/>
+                <SinglePost  navigation={navigation} post={fakePost2}/>
+                <SinglePost navigation={navigation} post={fakePost}/>
+                <SinglePost  navigation={navigation} post={fakePost2}/>
             </ScrollView>
         </SafeAreaView>
     )

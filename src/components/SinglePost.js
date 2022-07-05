@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, Image, Dimensions } from 'react-native'
+import { View, Text, StyleSheet, Image, Dimensions, TouchableOpacity } from 'react-native'
 import React from 'react'
 
 import { Entypo } from '@expo/vector-icons';
@@ -23,12 +23,12 @@ export default function SinglePost(props) {
                 backgroundColor: props.post.post.backgroundColor
             }]}>
                 <Text style={[styles.title, { color: props.post.post.titleColor }]}>{props.post.post.title}</Text>
-                <Text style={[styles.quote, { color: props.post.post.quoteColor,fontFamily: props.post.post.font?props.post.post.font:'Header'}]}>{props.post.post.quote}</Text>
+                <Text style={[styles.quote, { color: props.post.post.quoteColor, fontFamily: props.post.post.font ? props.post.post.font : 'Header' }]}>{props.post.post.quote}</Text>
             </View>
             <View style={styles.bottomContainer}>
                 <View style={styles.bottomLeftContainer}>
                     <FontAwesome name="heart" size={30} color="#de0A26" style={{ marginRight: 20 }} />
-                    <FontAwesome name="comment-o" size={30} color="black" style={{ marginRight: 20 }} />
+                    <FontAwesome name="comment-o" size={30} color="black" style={{ marginRight: 20 }}  onPress={()=>props.navigation.navigate('Comments')}/>
                     <Ionicons name="paper-plane-outline" size={30} color="black" />
                 </View>
                 <FontAwesome name="bookmark-o" size={30} color="black" />
@@ -36,8 +36,11 @@ export default function SinglePost(props) {
 
             <View>
                 <Text style={styles.likesCount}>{props.post.numberOfLikes} Likes</Text>
-                <Text style={styles.commentCount}>View All {props.post.numberOfComment} Comments </Text>
+                <TouchableOpacity onPress={()=>props.navigation.navigate('Comments')}>
+                    <Text style={styles.commentCount}>View All {props.post.numberOfComment} Comments </Text>
+                </TouchableOpacity>
             </View>
+
         </View>
     )
 }
@@ -45,7 +48,7 @@ export default function SinglePost(props) {
 const styles = StyleSheet.create({
     container: {
         marginHorizontal: 15,
-        marginBottom: 24
+        marginBottom: 20,
     },
     postContainer: {
 
@@ -82,16 +85,18 @@ const styles = StyleSheet.create({
     },
     post: {
         width: width,
-        height: width - 30,
         marginHorizontal: -15,
         marginTop: 7,
         marginBottom: 7,
         alignItems: 'center',
         justifyContent: 'center',
+        padding: 20,
+        minHeight: width
     },
     title: {
         fontFamily: 'Header',
-        fontSize: 20
+        fontSize: 22,
+        marginBottom: 10
 
     },
     quote: {
@@ -99,9 +104,10 @@ const styles = StyleSheet.create({
     },
     likesCount: {
         fontFamily: 'Header',
-        marginTop:3
+        marginTop: 3
     },
-    commentCount:{
+    commentCount: {
         fontFamily: 'Header',
+        color: '#8d8d8d'
     }
 })
