@@ -10,7 +10,7 @@ const fakePost={
     userName:'Aman Dhattarwal',
     userImage:'https://images.unsplash.com/flagged/photo-1570612861542-284f4c12e75f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1170&q=80',
     post:{
-        backgroundColor:'#668751',
+        backgroundColor:'#3F1CF2',
         title:'This is my First Post',
         quote:'An Apple A day Keeps the doctor Away',
         titleColor:'#FFFFFF',
@@ -26,7 +26,7 @@ const fakePost2={
     userName:'Piyush Bansal',
     userImage:'https://images.unsplash.com/photo-1438761681033-6461ffad8d80?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=2070&q=80',
     post:{
-        backgroundColor:'#de0A26',
+        backgroundColor:'#668751',
         title:'I am Joey Tribianni',
         quote:'Hey How you doin\' ',
         titleColor:'#FFFFFF',
@@ -40,7 +40,7 @@ const fakePost2={
 export default function Home({navigation}) {
     return (
         <SafeAreaView style={styles.container}>
-            <ScrollView>
+            <ScrollView showsVerticalScrollIndicator={false}>
                 <SB style="dark" />
                 <View style={{height:10}}/>
                 <SinglePost navigation={navigation} post={fakePost}/>

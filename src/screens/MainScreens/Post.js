@@ -66,7 +66,7 @@ const styles = StyleSheet.create({
         marginBottom: 15
     },
     button: {
-        padding: 15,
+        padding: 10,
         alignItems: 'center',
         justifyContent: 'space-between',
         position: 'absolute',

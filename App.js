@@ -1,5 +1,3 @@
-import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
 import { useFonts } from 'expo-font';
 
 import MainStack from './src/navigation/MainStack';
@@ -7,7 +5,7 @@ import MainStack from './src/navigation/MainStack';
 import Splash from './src/screens/ExtraScreens/Splash'
 
 export default function App() {
-  
+
   const [loaded] = useFonts({
     Black: require('./src/assets/fonts/Black.ttf'),
     Bold: require('./src/assets/fonts/Bold.ttf'),
@@ -21,6 +19,6 @@ export default function App() {
     return null;
   }
   return (
-    <Splash/>
+    <MainStack />
   );
 }

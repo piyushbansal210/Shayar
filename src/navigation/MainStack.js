@@ -8,6 +8,7 @@ import { Ionicons } from '@expo/vector-icons';
 import Bottom from './Bottom';
 import Post from '../screens/MainScreens/Post';
 import Comments from '../screens/ExtraScreens/Comments';
+import Settings from '../screens/ExtraScreens/Settings';
 
 
 
@@ -47,6 +48,19 @@ export default function MainStack() {
                             <View style={styles.container}>
                                 <Ionicons name="arrow-back" size={24} color="black" onPress={() => navigation.goBack()} />
                                 <Text style={styles.post}>Comments</Text>
+                            </View>
+                        ),
+
+                    })} />
+
+                <Stack.Screen name="settings" component={Settings}
+                    options={({ navigation }) => ({
+                        headerShown: true,
+                        headerTitle: () => null,
+                        headerLeft: () => (
+                            <View style={styles.container}>
+                                <Ionicons name="arrow-back" size={24} color="black" onPress={() => navigation.goBack()} />
+                                <Text style={styles.post}>Settings</Text>
                             </View>
                         ),
 

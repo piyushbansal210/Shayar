@@ -1,5 +1,5 @@
-import { View, Text, StyleSheet, Image, Dimensions, TouchableOpacity } from 'react-native'
-import React from 'react'
+import { View, Text, StyleSheet, Image, Dimensions, TouchableOpacity, Pressable } from 'react-native'
+import React,{useState} from 'react'
 
 import { Entypo } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons';
@@ -8,7 +8,13 @@ import { Ionicons } from '@expo/vector-icons';
 
 const { width, height } = Dimensions.get('screen');
 
+
+
+
 export default function SinglePost(props) {
+
+    const [like, setLike] = useState(false);
+    const [addFavourite, setAddFavourite] = useState(false);
 
     return (
         <View style={styles.container}>
@@ -17,7 +23,9 @@ export default function SinglePost(props) {
                     <Image source={{ uri: props.post.userImage }} style={styles.image} />
                     <Text numberOfLines={1} style={styles.userName}>{props.post.userName}</Text>
                 </View>
-                <MaterialCommunityIcons name="dots-vertical" size={30} color="black" />
+                <Pressable>
+                    <MaterialCommunityIcons name="dots-vertical" size={30} color="black" />
+                </Pressable>
             </View>
             <View style={[styles.post, {
                 backgroundColor: props.post.post.backgroundColor
@@ -27,16 +35,28 @@ export default function SinglePost(props) {
             </View>
             <View style={styles.bottomContainer}>
                 <View style={styles.bottomLeftContainer}>
-                    <FontAwesome name="heart" size={30} color="#de0A26" style={{ marginRight: 20 }} />
-                    <FontAwesome name="comment-o" size={30} color="black" style={{ marginRight: 20 }}  onPress={()=>props.navigation.navigate('Comments')}/>
+                    <TouchableOpacity onPress={()=>setLike(!like)}>
+                        {
+                            like?<FontAwesome name="heart" size={30} color="#de0A26" style={styles.likeStyle} />:
+                            <FontAwesome name="heart-o" size={30} color="black" style={styles.likeStyle} />
+
+                        }
+                    </TouchableOpacity>
+                    <FontAwesome name="comment-o" size={30} color="black" style={{ marginRight: 20 }} onPress={() => props.navigation.navigate('Comments')} />
                     <Ionicons name="paper-plane-outline" size={30} color="black" />
                 </View>
-                <FontAwesome name="bookmark-o" size={30} color="black" />
+                <TouchableOpacity onPress={()=>setAddFavourite(!addFavourite)}>
+                        {
+                            addFavourite?<FontAwesome name="bookmark" size={30} color="black"  />:
+                            <FontAwesome name="bookmark-o" size={30} color="black" />
+
+                        }
+                    </TouchableOpacity>
             </View>
 
             <View>
                 <Text style={styles.likesCount}>{props.post.numberOfLikes} Likes</Text>
-                <TouchableOpacity onPress={()=>props.navigation.navigate('Comments')}>
+                <TouchableOpacity onPress={() => props.navigation.navigate('Comments')}>
                     <Text style={styles.commentCount}>View All {props.post.numberOfComment} Comments </Text>
                 </TouchableOpacity>
             </View>
@@ -109,5 +129,8 @@ const styles = StyleSheet.create({
     commentCount: {
         fontFamily: 'Header',
         color: '#8d8d8d'
+    },
+    likeStyle:{
+        marginRight:20
     }
 })
