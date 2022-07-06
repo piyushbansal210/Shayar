@@ -173,7 +173,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         borderWidth: 1,
         borderColor: '#FF6200',
-        marginBottom:3
+        marginBottom: 3
     },
     buttonText: {
         fontFamily: 'Bold'

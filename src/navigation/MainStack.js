@@ -9,6 +9,7 @@ import Bottom from './Bottom';
 import Post from '../screens/MainScreens/Post';
 import Comments from '../screens/ExtraScreens/Comments';
 import Settings from '../screens/ExtraScreens/Settings';
+import SettingsStack from './SettingsStack';
 
 
 
@@ -53,17 +54,9 @@ export default function MainStack() {
 
                     })} />
 
-                <Stack.Screen name="settings" component={Settings}
+                <Stack.Screen name="settings" component={SettingsStack}
                     options={({ navigation }) => ({
-                        headerShown: true,
-                        headerTitle: () => null,
-                        headerLeft: () => (
-                            <View style={styles.container}>
-                                <Ionicons name="arrow-back" size={24} color="black" onPress={() => navigation.goBack()} />
-                                <Text style={styles.post}>Settings</Text>
-                            </View>
-                        ),
-
+                        headerShown: false,
                     })} />
             </Stack.Navigator>
         </NavigationContainer>

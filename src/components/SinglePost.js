@@ -1,5 +1,5 @@
 import { View, Text, StyleSheet, Image, Dimensions, TouchableOpacity, Pressable } from 'react-native'
-import React,{useState} from 'react'
+import React, { useState } from 'react'
 
 import { Entypo } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons';
@@ -35,23 +35,23 @@ export default function SinglePost(props) {
             </View>
             <View style={styles.bottomContainer}>
                 <View style={styles.bottomLeftContainer}>
-                    <TouchableOpacity onPress={()=>setLike(!like)}>
+                    <TouchableOpacity onPress={() => setLike(!like)}>
                         {
-                            like?<FontAwesome name="heart" size={30} color="#de0A26" style={styles.likeStyle} />:
-                            <FontAwesome name="heart-o" size={30} color="black" style={styles.likeStyle} />
+                            like ? <FontAwesome name="heart" size={30} color="#de0A26" style={styles.likeStyle} /> :
+                                <FontAwesome name="heart-o" size={30} color="black" style={styles.likeStyle} />
 
                         }
                     </TouchableOpacity>
                     <FontAwesome name="comment-o" size={30} color="black" style={{ marginRight: 20 }} onPress={() => props.navigation.navigate('Comments')} />
                     <Ionicons name="paper-plane-outline" size={30} color="black" />
                 </View>
-                <TouchableOpacity onPress={()=>setAddFavourite(!addFavourite)}>
-                        {
-                            addFavourite?<FontAwesome name="bookmark" size={30} color="black"  />:
+                <TouchableOpacity onPress={() => setAddFavourite(!addFavourite)}>
+                    {
+                        addFavourite ? <FontAwesome name="bookmark" size={30} color="black" /> :
                             <FontAwesome name="bookmark-o" size={30} color="black" />
 
-                        }
-                    </TouchableOpacity>
+                    }
+                </TouchableOpacity>
             </View>
 
             <View>
@@ -130,7 +130,7 @@ const styles = StyleSheet.create({
         fontFamily: 'Header',
         color: '#8d8d8d'
     },
-    likeStyle:{
-        marginRight:20
+    likeStyle: {
+        marginRight: 20
     }
 })
