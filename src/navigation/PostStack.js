@@ -44,7 +44,7 @@ export default function PostStack() {
                     headerLeft: () => (
                         <View style={styles.container}>
                             <Ionicons name="arrow-back" size={24} color="black" onPress={() => navigation.goBack()} />
-                            <Text style={styles.post}>Choose Background</Text>
+                            <Text style={styles.post}>Edit Post</Text>
                         </View>
                     ),
                 })}

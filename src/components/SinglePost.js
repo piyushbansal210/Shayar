@@ -54,7 +54,7 @@ export default function SinglePost(props) {
                 </TouchableOpacity>
             </View>
 
-            <View>
+            <View style={{marginHorizontal:5}}>
                 <Text style={styles.likesCount}>{props.post.numberOfLikes} Likes</Text>
                 <TouchableOpacity onPress={() => props.navigation.navigate('Comments')}>
                     <Text style={styles.commentCount}>View All {props.post.numberOfComment} Comments </Text>
@@ -75,7 +75,9 @@ const styles = StyleSheet.create({
     },
     bottomContainer: {
         flexDirection: 'row',
-        alignItems: 'center'
+        alignItems: 'center',
+        marginHorizontal:5,
+        marginTop:5
     },
     bottomLeftContainer: {
         flexDirection: 'row',
@@ -89,7 +91,8 @@ const styles = StyleSheet.create({
     },
     upperContainer: {
         flexDirection: 'row',
-        alignItems: 'center'
+        alignItems: 'center',
+        marginHorizontal:5
     },
     upperLeftContainer: {
         flexDirection: 'row',
@@ -104,14 +107,14 @@ const styles = StyleSheet.create({
 
     },
     post: {
-        width: width,
-        marginHorizontal: -15,
+        width: '100%',
         marginTop: 7,
         marginBottom: 7,
         alignItems: 'center',
         justifyContent: 'center',
         padding: 20,
-        minHeight: width
+        minHeight: width,
+        
     },
     title: {
         fontFamily: 'Header',
