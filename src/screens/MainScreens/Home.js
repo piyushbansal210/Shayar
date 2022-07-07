@@ -41,7 +41,7 @@ export default function Home({navigation}) {
     return (
         <SafeAreaView style={styles.container}>
             <ScrollView showsVerticalScrollIndicator={false}>
-                <SB style="dark" />
+                <SB style="light" />
                 <View style={{height:10}}/>
                 <SinglePost navigation={navigation} post={fakePost}/>
                 <SinglePost  navigation={navigation} post={fakePost2}/>

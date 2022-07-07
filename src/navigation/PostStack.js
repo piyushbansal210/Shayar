@@ -23,8 +23,11 @@ export default function PostStack() {
             screenOptions={{
                 headerTitleStyle: {
                     fontFamily: 'Header',
-                    fontSize: 23
+                    fontSize: 23,
                 },
+                headerStyle:{
+                    height:height/9
+                }
             }}
         >
             <PostTabs.Screen name="mainPost" component={Post}
@@ -40,13 +43,7 @@ export default function PostStack() {
             />
             <PostTabs.Screen name="editPost" component={EditPost}
                 options={({ navigation }) => ({
-                    headerTitle: () => null,
-                    headerLeft: () => (
-                        <View style={styles.container}>
-                            <Ionicons name="arrow-back" size={24} color="black" onPress={() => navigation.goBack()} />
-                            <Text style={styles.post}>Edit Post</Text>
-                        </View>
-                    ),
+                    headerShown:false,
                 })}
             />
         </PostTabs.Navigator>

@@ -9,7 +9,7 @@ export default function Search() {
     return (
         <SafeAreaView style={styles.container}>
             <ScrollView>
-                <SB style="dark" />
+                <SB style="light" />
                 <View style={styles.inputContainer}>
                     <FontAwesome name="search" size={23} color="#b3b3b3" />
                     <TextInput

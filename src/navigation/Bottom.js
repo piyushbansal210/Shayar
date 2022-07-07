@@ -32,6 +32,9 @@ export default function Bottom() {
     return (
         <Tab.Navigator
             screenOptions={{
+                headerStyle:{
+                    height:height/9
+                },
                 headerTitleStyle: {
                     fontFamily: 'Header',
                     fontSize: 23

@@ -1,10 +1,11 @@
-import { View, Text, StyleSheet, Image, Dimensions, TouchableOpacity, Pressable } from 'react-native'
+import { View, Text, StyleSheet, Image, Dimensions, TouchableOpacity, Pressable, Modal } from 'react-native'
 import React, { useState } from 'react'
 
 import { Entypo } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
+
 
 const { width, height } = Dimensions.get('screen');
 
@@ -16,14 +17,52 @@ export default function SinglePost(props) {
     const [like, setLike] = useState(false);
     const [addFavourite, setAddFavourite] = useState(false);
 
+    const [modalVisible, setModalVisible] = useState(false);
+
     return (
+
+
         <View style={styles.container}>
+
+
+            <Modal
+                animationType="slide"
+                transparent={true}
+                visible={modalVisible}
+                onRequestClose={() => {
+                    setModalVisible(!modalVisible);
+                }}
+            >
+
+                <View style={styles.centeredView}>
+                    <Entypo name="cross" size={40} color="white" style={{ alignSelf: 'flex-end', margin: 15 }} onPress={() => setModalVisible(!modalVisible)} />
+                    <View style={styles.modalView}>
+                        <View style={{ backgroundColor: 'white', opacity: 1 }}>
+                            <View style={styles.viewContainer}>
+                                <Text style={styles.modalButtonText}>Add To Favourites</Text>
+                            </View>
+                            <View style={styles.viewContainer}>
+                                <Text style={styles.modalButtonText}>Share Shayari</Text>
+                            </View>
+                            <View style={styles.viewContainer}>
+                                <Text style={styles.modalButtonText}>Unfollow this User</Text>
+                            </View>
+                        </View>
+
+                    </View>
+                </View>
+
+
+            </Modal>
+
+
+
             <View style={styles.upperContainer}>
                 <View style={styles.upperLeftContainer}>
                     <Image source={{ uri: props.post.userImage }} style={styles.image} />
                     <Text numberOfLines={1} style={styles.userName}>{props.post.userName}</Text>
                 </View>
-                <Pressable>
+                <Pressable onPress={() => setModalVisible(true)}>
                     <MaterialCommunityIcons name="dots-vertical" size={30} color="black" />
                 </Pressable>
             </View>
@@ -54,7 +93,7 @@ export default function SinglePost(props) {
                 </TouchableOpacity>
             </View>
 
-            <View style={{marginHorizontal:5}}>
+            <View style={{ marginHorizontal: 10 }}>
                 <Text style={styles.likesCount}>{props.post.numberOfLikes} Likes</Text>
                 <TouchableOpacity onPress={() => props.navigation.navigate('Comments')}>
                     <Text style={styles.commentCount}>View All {props.post.numberOfComment} Comments </Text>
@@ -67,7 +106,7 @@ export default function SinglePost(props) {
 
 const styles = StyleSheet.create({
     container: {
-        marginHorizontal: 15,
+        marginHorizontal: 0,
         marginBottom: 20,
     },
     postContainer: {
@@ -76,13 +115,15 @@ const styles = StyleSheet.create({
     bottomContainer: {
         flexDirection: 'row',
         alignItems: 'center',
-        marginHorizontal:5,
-        marginTop:5
+        marginHorizontal: 5,
+        marginTop: 5,
+        marginHorizontal: 10
     },
     bottomLeftContainer: {
         flexDirection: 'row',
         flex: 1,
-        alignItems: 'center'
+        alignItems: 'center',
+
     },
     image: {
         width: width / 9,
@@ -92,12 +133,13 @@ const styles = StyleSheet.create({
     upperContainer: {
         flexDirection: 'row',
         alignItems: 'center',
-        marginHorizontal:5
+        marginHorizontal: 5
     },
     upperLeftContainer: {
         flexDirection: 'row',
         flex: 1,
-        alignItems: 'center'
+        alignItems: 'center',
+        marginHorizontal: 10
     },
     userName: {
         fontFamily: 'Header',
@@ -114,7 +156,7 @@ const styles = StyleSheet.create({
         justifyContent: 'center',
         padding: 20,
         minHeight: width,
-        
+
     },
     title: {
         fontFamily: 'Header',
@@ -135,5 +177,27 @@ const styles = StyleSheet.create({
     },
     likeStyle: {
         marginRight: 20
+    },
+    centeredView: {
+        flex: 1,
+        opacity: 0.8,
+        backgroundColor: 'black',
+    },
+    modalView: {
+        alignItems: 'center',
+        justifyContent: 'center',
+        marginHorizontal: 10,
+        flex: 1,
+    },
+    modalButtonText: {
+        fontFamily:'Bold',
+       fontSize:16
+    },  
+    viewContainer:{
+        paddingHorizontal:50,
+        paddingVertical:20,
+        borderBottomWidth:0.3,
+        alignItems: 'center',
+        justifyContent: 'center',
     }
 })

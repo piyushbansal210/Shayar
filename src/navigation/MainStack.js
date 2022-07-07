@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet } from 'react-native'
+import { View, Text, StyleSheet ,Dimensions} from 'react-native'
 import React from 'react'
 
 import { NavigationContainer } from '@react-navigation/native';
@@ -11,6 +11,8 @@ import Comments from '../screens/ExtraScreens/Comments';
 import Settings from '../screens/ExtraScreens/Settings';
 import SettingsStack from './SettingsStack';
 import PostStack from './PostStack';
+
+const {width, height} = Dimensions.get('screen')
 
 
 
@@ -25,7 +27,10 @@ export default function MainStack() {
                     fontFamily: 'Header',
                     fontSize: 23
                 },
-                headerTitleShown: false
+                headerTitleShown: false,
+                headerStyle:{
+                    height:height/9
+                }
             }} >
                 <Stack.Screen name="BottomMain" component={Bottom} />
 

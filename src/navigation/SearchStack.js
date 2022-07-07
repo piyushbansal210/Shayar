@@ -23,6 +23,9 @@ export default function SearchStack() {
                     fontFamily: 'Header',
                     fontSize: 23
                 },
+                headerStyle:{
+                    height:height/9
+                }
             }}
         >
             <SearchTabs.Screen name="mainSearch" component={Search}

@@ -28,6 +28,9 @@ export default function SettingsStack() {
                     fontFamily: 'Header',
                     fontSize: 23
                 },
+                headerStyle:{
+                    height:height/9
+                }
             }}
         >
             <SettingTabs.Screen name="indexSetting" component={Settings}

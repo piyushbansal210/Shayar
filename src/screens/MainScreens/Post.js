@@ -17,7 +17,7 @@ const postSchema = Yup.object().shape({
 export default function Post({ navigation }) {
     return (
         <SafeAreaView style={styles.container}>
-            <SB style="dark" />
+            <SB style="light" />
             <Formik
                 initialValues={{
                     Title: '',
@@ -92,7 +92,7 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         padding: 15,
-        backgroundColor: '#FCFCFC'
+        backgroundColor: 'white'
     },
     heading: {
         fontFamily: 'Header',

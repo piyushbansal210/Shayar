@@ -312,9 +312,6 @@ export default function Settings({navigation}) {
             <Pressable style={styles.innerContainer} onPress={()=>navigation.navigate('FavSave',{title:'Saved Shayaris', data:saved})}>
                 <Text style={styles.design}>Saved Shayaris</Text>
             </Pressable>
-            <Pressable style={styles.innerContainer} onPress={()=>navigation.navigate('Policy')}>
-                <Text style={styles.design}>Privacy Policy</Text>
-            </Pressable>
             <Pressable style={styles.innerContainer} onPress={()=>navigation.navigate('Terms')}>
                 <Text style={styles.design}>Terms of Use</Text>
             </Pressable>

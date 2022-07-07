@@ -21,6 +21,9 @@ export default function ProfileStack() {
                     fontFamily: 'Header',
                     fontSize: 23
                 },
+                headerStyle:{
+                    height:height/9
+                }      
             }}
         >
             <ProfileTabs.Screen name="main" component={Profile}
