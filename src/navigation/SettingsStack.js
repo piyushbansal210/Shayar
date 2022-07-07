@@ -12,6 +12,8 @@ import Settings from '../screens/ExtraScreens/Settings';
 import Policy from '../screens/ExtraScreens/Policy';
 import EditProfile from '../screens/ExtraScreens/EditProfile';
 import ChangePassword from '../screens/ExtraScreens/ChangePassword';
+import PostDisplay from '../screens/ExtraScreens/PostDisplay';
+
 
 
 const SettingTabs = createStackNavigator();
@@ -91,6 +93,16 @@ export default function SettingsStack() {
             <SettingTabs.Screen name="ChangePassword" component={ChangePassword}
                 options={({ navigation, route }) => ({
                     headerTitle: 'Change Password',
+                    headerLeft: () => (
+                        <View style={styles.container}>
+                            <Ionicons name="arrow-back" size={24} color="black" onPress={() => navigation.goBack()} />
+                        </View>
+                    ),
+                })}
+            />
+            <SettingTabs.Screen name="postDisplay" component={PostDisplay}
+                options={({ navigation, route }) => ({
+                    headerTitle: route.params.userName,
                     headerLeft: () => (
                         <View style={styles.container}>
                             <Ionicons name="arrow-back" size={24} color="black" onPress={() => navigation.goBack()} />

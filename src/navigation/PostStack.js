@@ -5,17 +5,21 @@ import { createStackNavigator } from '@react-navigation/stack';
 import { SimpleLineIcons } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
 
+import Post from '../screens/MainScreens/Post'
+import ChooseColor from '../screens/ExtraScreens/ChooseColor';
+import ChooseFont from '../screens/ExtraScreens/ChooseFont';
+import ShowPost from '../screens/ExtraScreens/ShowPost';
+import EditPost from '../screens/ExtraScreens/EditPost';
 
-import Profile from '../screens/MainScreens/Profile';
-import FFList from '../screens/ExtraScreens/FFList';
-import PostDisplay from '../screens/ExtraScreens/PostDisplay';
 
-const ProfileTabs = createStackNavigator();
+
+const PostTabs = createStackNavigator();
 const { width, height } = Dimensions.get('screen')
 
-export default function ProfileStack() {
+export default function PostStack() {
     return (
-        <ProfileTabs.Navigator
+        <PostTabs.Navigator
+            initialRouteName='mainPost'
             screenOptions={{
                 headerTitleStyle: {
                     fontFamily: 'Header',
@@ -23,37 +27,29 @@ export default function ProfileStack() {
                 },
             }}
         >
-            <ProfileTabs.Screen name="main" component={Profile}
+            <PostTabs.Screen name="mainPost" component={Post}
                 options={({ navigation }) => ({
-                    headerTitle: 'Profile',
-                    headerRight: () => (
-                        <Pressable onPress={() => navigation.navigate('settings')} style={{ marginRight: 20 }}>
-                            <SimpleLineIcons name="settings" size={24} color="black" />
-                        </Pressable>
-                    )
-                })}
-            />
-            <ProfileTabs.Screen name="list" component={FFList}
-                options={({ navigation, route }) => ({
-                    headerTitle: route.params.title,
+                    headerTitle: () => null,
                     headerLeft: () => (
                         <View style={styles.container}>
                             <Ionicons name="arrow-back" size={24} color="black" onPress={() => navigation.goBack()} />
+                            <Text style={styles.post}>Post</Text>
                         </View>
                     ),
                 })}
             />
-            <ProfileTabs.Screen name="display" component={PostDisplay}
-                options={({ navigation, route }) => ({
-                    headerTitle: route.params.userName,
+            <PostTabs.Screen name="editPost" component={EditPost}
+                options={({ navigation }) => ({
+                    headerTitle: () => null,
                     headerLeft: () => (
                         <View style={styles.container}>
                             <Ionicons name="arrow-back" size={24} color="black" onPress={() => navigation.goBack()} />
+                            <Text style={styles.post}>Choose Background</Text>
                         </View>
                     ),
                 })}
             />
-        </ProfileTabs.Navigator>
+        </PostTabs.Navigator>
     )
 }
 

@@ -10,6 +10,7 @@ import Post from '../screens/MainScreens/Post';
 import Comments from '../screens/ExtraScreens/Comments';
 import Settings from '../screens/ExtraScreens/Settings';
 import SettingsStack from './SettingsStack';
+import PostStack from './PostStack';
 
 
 
@@ -28,16 +29,9 @@ export default function MainStack() {
             }} >
                 <Stack.Screen name="BottomMain" component={Bottom} />
 
-                <Stack.Screen name="Post" component={Post}
+                <Stack.Screen name="Post" component={PostStack}
                     options={({ navigation }) => ({
-                        headerShown: true,
-                        headerTitle: () => null,
-                        headerLeft: () => (
-                            <View style={styles.container}>
-                                <Ionicons name="arrow-back" size={24} color="black" onPress={() => navigation.goBack()} />
-                                <Text style={styles.post}>Post</Text>
-                            </View>
-                        ),
+                        headerShown: false,
 
                     })} />
 

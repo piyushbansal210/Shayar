@@ -17,6 +17,7 @@ import Post from '../screens/MainScreens/Post'
 import Profile from '../screens/MainScreens/Profile'
 import Search from '../screens/MainScreens/Search';
 
+import SearchStack from './SearchStack'
 import ProfileStack from './ProfileStack';
 
 //variables
@@ -56,9 +57,9 @@ export default function Bottom() {
                     tabBarIcon: ({ color }) => <Entypo name="home" size={30} color={color} />
                 }}
             />
-            <Tab.Screen name="Search" component={Search}
+            <Tab.Screen name="Search" component={SearchStack}
                 options={{
-                    headerTitle: 'Search',
+                    headerShown:false,
                     tabBarIcon: ({ color }) => <FontAwesome name="search" size={30} color={color} />
                 }}
             />

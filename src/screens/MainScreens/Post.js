@@ -1,4 +1,4 @@
-import { View, Text, StyleSheet, Dimensions, SafeAreaView, TextInput } from 'react-native'
+import { View, Text, StyleSheet, Dimensions, SafeAreaView, TextInput, Pressable } from 'react-native'
 import React from 'react'
 import { StatusBar as SB } from 'expo-status-bar';
 
@@ -7,7 +7,7 @@ import { LinearGradient } from 'expo-linear-gradient';
 
 const { width, height } = Dimensions.get('screen')
 
-export default function Post() {
+export default function Post({ navigation }) {
     return (
         <SafeAreaView style={styles.container}>
             <View>
@@ -28,13 +28,21 @@ export default function Post() {
 
 
             </View>
-            <LinearGradient
-                colors={['#FF6200', '#FF6200', '#FD9346']}
-                style={styles.button}>
+            <Pressable style={{
+                position: 'absolute',
+                width: '100%',
+                bottom: 20,
+                alignSelf: 'center',
+            }} onPress={()=>navigation.navigate('editPost')}>
+                <LinearGradient
+                    colors={['#FF6200', '#FF6200', '#FD9346']}
+                    style={styles.button}>
 
-                <Text style={styles.textLogo}>Next</Text>
-                <AntDesign name="arrowright" size={24} color="white" />
-            </LinearGradient>
+                    <Text style={styles.textLogo}>Next</Text>
+                    <AntDesign name="arrowright" size={24} color="white" />
+                </LinearGradient>
+            </Pressable>
+
         </SafeAreaView>
     )
 }
@@ -42,8 +50,8 @@ export default function Post() {
 const styles = StyleSheet.create({
     container: {
         flex: 1,
-        backgroundColor: '#FCFCFC',
-        padding: 20,
+        padding: 15,
+        backgroundColor:'#FCFCFC'
     },
     heading: {
         fontFamily: 'Header',
@@ -69,15 +77,12 @@ const styles = StyleSheet.create({
         padding: 10,
         alignItems: 'center',
         justifyContent: 'space-between',
-        position: 'absolute',
-        width: '100%',
-        bottom: 20,
-        alignSelf: 'center',
-        flexDirection:'row'
+        
+        flexDirection: 'row'
     },
     textLogo: {
-        fontFamily:'Header',
-        color:'white',
-        fontSize:17
+        fontFamily: 'Header',
+        color: 'white',
+        fontSize: 17
     }
 })

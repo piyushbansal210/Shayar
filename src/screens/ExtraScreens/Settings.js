@@ -4,6 +4,293 @@ import React from 'react'
 import { AntDesign } from '@expo/vector-icons';
 import { LinearGradient } from 'expo-linear-gradient';
 
+const favourite = [
+    {
+        id: 1,
+        post: {
+            backgroundColor: '#EEA110',
+            title: 'This is my First Post',
+            quote: 'An Apple A day Keeps the doctor Away',
+            titleColor: '#FFFFFF',
+            quoteColor: '#FFFFFF',
+        },
+    },
+    {
+        id: 2,
+        post: {
+            backgroundColor: '#14E3AB',
+            title: 'Wasuup guys , do you want to hear my',
+            quote: 'An Apple A day Keeps the doctor Away',
+            titleColor: '#FFFFFF',
+            quoteColor: '#FFFFFF',
+        },
+    },
+    {
+        id: 3,
+        post: {
+            backgroundColor: '#54CF02',
+            title: 'I am Joey Tribianni',
+            quote: 'An Apple A day Keeps the doctor Away',
+            titleColor: '#FFFFFF',
+            quoteColor: '#FFFFFF',
+        },
+    },
+    {
+        id: 4,
+        post: {
+            backgroundColor: '#3F1CF2',
+            title: 'I love maths, Do you',
+            quote: 'An Apple A day Keeps the doctor Away',
+            titleColor: '#FFFFFF',
+            quoteColor: '#FFFFFF',
+        },
+    },
+    {
+        id: 5,
+        post: {
+            backgroundColor: '#54CF02',
+            title: 'Shayari Op guys',
+            quote: 'An Apple A day Keeps the doctor Away',
+            titleColor: '#FFFFFF',
+            quoteColor: '#FFFFFF',
+        },
+    },
+    {
+        id: 6,
+        post: {
+            backgroundColor: '#EEA110',
+            title: 'Shayari Op guys',
+            quote: 'An Apple A day Keeps the doctor Away',
+            titleColor: '#FFFFFF',
+            quoteColor: '#FFFFFF',
+        },
+    },
+    {
+        id: 7,
+        post: {
+            backgroundColor: '#54CF02',
+            title: 'Shayari Op guys',
+            quote: 'An Apple A day Keeps the doctor Away',
+            titleColor: '#FFFFFF',
+            quoteColor: '#FFFFFF',
+        },
+    },
+    {
+        id: 8,
+        post: {
+            backgroundColor: '#3F1CF2',
+            title: 'Shayari Op guys',
+            quote: 'An Apple A day Keeps the doctor Away',
+            titleColor: '#FFFFFF',
+            quoteColor: '#FFFFFF',
+        },
+    },
+    {
+        id: 9,
+        post: {
+            backgroundColor: '#14E3AB',
+            title: 'Shayari Op guys',
+            quote: 'An Apple A day Keeps the doctor Away',
+            titleColor: '#FFFFFF',
+            quoteColor: '#FFFFFF',
+        },
+    },
+    {
+        id: 10,
+        post: {
+            backgroundColor: '#54CF02',
+            title: 'Shayari Op guys',
+            quote: 'An Apple A day Keeps the doctor Away',
+            titleColor: '#FFFFFF',
+            quoteColor: '#FFFFFF',
+        },
+    },
+    {
+        id: 11,
+        post: {
+            backgroundColor: '#3F1CF2',
+            title: 'Shayari Op guys',
+            quote: 'An Apple A day Keeps the doctor Away',
+            titleColor: '#FFFFFF',
+            quoteColor: '#FFFFFF',
+        },
+    },
+    {
+        id: 12,
+        post: {
+            backgroundColor: '#54CF02',
+            title: 'Shayari Op guys',
+            quote: 'An Apple A day Keeps the doctor Away',
+            titleColor: '#FFFFFF',
+            quoteColor: '#FFFFFF',
+        },
+    },
+    {
+        id: 13,
+        post: {
+            backgroundColor: '#14E3AB',
+            title: 'Shayari Op guys',
+            quote: 'An Apple A day Keeps the doctor Away',
+            titleColor: '#FFFFFF',
+            quoteColor: '#FFFFFF',
+        },
+    },
+    {
+        id: 14,
+        post: {
+            backgroundColor: '#3F1CF2',
+            title: 'Shayari Op guys',
+            quote: 'An Apple A day Keeps the doctor Away',
+            titleColor: '#FFFFFF',
+            quoteColor: '#FFFFFF',
+        },
+    },
+]
+
+const saved = [
+    {
+        id: 1,
+        post: {
+            backgroundColor: '#EEA110',
+            title: 'This is my First Post',
+            quote: 'An Apple A day Keeps the doctor Away',
+            titleColor: '#FFFFFF',
+            quoteColor: '#FFFFFF',
+        },
+    },
+    {
+        id: 2,
+        post: {
+            backgroundColor: '#14E3AB',
+            title: 'Wasuup guys , do you want to hear my',
+            quote: 'An Apple A day Keeps the doctor Away',
+            titleColor: '#FFFFFF',
+            quoteColor: '#FFFFFF',
+        },
+    },
+    {
+        id: 3,
+        post: {
+            backgroundColor: '#54CF02',
+            title: 'I am Joey Tribianni',
+            quote: 'An Apple A day Keeps the doctor Away',
+            titleColor: '#FFFFFF',
+            quoteColor: '#FFFFFF',
+        },
+    },
+    {
+        id: 4,
+        post: {
+            backgroundColor: '#3F1CF2',
+            title: 'I love maths, Do you',
+            quote: 'An Apple A day Keeps the doctor Away',
+            titleColor: '#FFFFFF',
+            quoteColor: '#FFFFFF',
+        },
+    },
+    {
+        id: 5,
+        post: {
+            backgroundColor: '#54CF02',
+            title: 'Shayari Op guys',
+            quote: 'An Apple A day Keeps the doctor Away',
+            titleColor: '#FFFFFF',
+            quoteColor: '#FFFFFF',
+        },
+    },
+    {
+        id: 6,
+        post: {
+            backgroundColor: '#EEA110',
+            title: 'Shayari Op guys',
+            quote: 'An Apple A day Keeps the doctor Away',
+            titleColor: '#FFFFFF',
+            quoteColor: '#FFFFFF',
+        },
+    },
+    {
+        id: 7,
+        post: {
+            backgroundColor: '#54CF02',
+            title: 'Shayari Op guys',
+            quote: 'An Apple A day Keeps the doctor Away',
+            titleColor: '#FFFFFF',
+            quoteColor: '#FFFFFF',
+        },
+    },
+    {
+        id: 8,
+        post: {
+            backgroundColor: '#3F1CF2',
+            title: 'Shayari Op guys',
+            quote: 'An Apple A day Keeps the doctor Away',
+            titleColor: '#FFFFFF',
+            quoteColor: '#FFFFFF',
+        },
+    },
+    {
+        id: 9,
+        post: {
+            backgroundColor: '#14E3AB',
+            title: 'Shayari Op guys',
+            quote: 'An Apple A day Keeps the doctor Away',
+            titleColor: '#FFFFFF',
+            quoteColor: '#FFFFFF',
+        },
+    },
+    {
+        id: 10,
+        post: {
+            backgroundColor: '#54CF02',
+            title: 'Shayari Op guys',
+            quote: 'An Apple A day Keeps the doctor Away',
+            titleColor: '#FFFFFF',
+            quoteColor: '#FFFFFF',
+        },
+    },
+    {
+        id: 11,
+        post: {
+            backgroundColor: '#3F1CF2',
+            title: 'Shayari Op guys',
+            quote: 'An Apple A day Keeps the doctor Away',
+            titleColor: '#FFFFFF',
+            quoteColor: '#FFFFFF',
+        },
+    },
+    {
+        id: 12,
+        post: {
+            backgroundColor: '#54CF02',
+            title: 'Shayari Op guys',
+            quote: 'An Apple A day Keeps the doctor Away',
+            titleColor: '#FFFFFF',
+            quoteColor: '#FFFFFF',
+        },
+    },
+    {
+        id: 13,
+        post: {
+            backgroundColor: '#14E3AB',
+            title: 'Shayari Op guys',
+            quote: 'An Apple A day Keeps the doctor Away',
+            titleColor: '#FFFFFF',
+            quoteColor: '#FFFFFF',
+        },
+    },
+    {
+        id: 14,
+        post: {
+            backgroundColor: '#3F1CF2',
+            title: 'Shayari Op guys',
+            quote: 'An Apple A day Keeps the doctor Away',
+            titleColor: '#FFFFFF',
+            quoteColor: '#FFFFFF',
+        },
+    },
+]
+
+
 export default function Settings({navigation}) {
     return (
         <View style={styles.container}>
@@ -19,17 +306,17 @@ export default function Settings({navigation}) {
             <Pressable style={styles.innerContainer} onPress={()=>navigation.navigate('EditProfile')}>
                 <Text style={styles.design}>Edit Profile</Text>
             </Pressable>
-            <Pressable style={styles.innerContainer} onPress={()=>navigation.navigate('FavSave',{title:'Favourite Shayaris'})}>
+            <Pressable style={styles.innerContainer} onPress={()=>navigation.navigate('FavSave',{title:'Favourite Shayaris', data:favourite})}>
                 <Text style={styles.design}>Favourite Shayaris</Text>
             </Pressable>
-            <Pressable style={styles.innerContainer} onPress={()=>navigation.navigate('FavSave',{title:'Saved Shayaris'})}>
+            <Pressable style={styles.innerContainer} onPress={()=>navigation.navigate('FavSave',{title:'Saved Shayaris', data:saved})}>
                 <Text style={styles.design}>Saved Shayaris</Text>
             </Pressable>
             <Pressable style={styles.innerContainer} onPress={()=>navigation.navigate('Policy')}>
                 <Text style={styles.design}>Privacy Policy</Text>
             </Pressable>
             <Pressable style={styles.innerContainer} onPress={()=>navigation.navigate('Terms')}>
-                <Text style={styles.design}>Terms An Conditions</Text>
+                <Text style={styles.design}>Terms of Use</Text>
             </Pressable>
             <Pressable style={styles.innerContainer}  onPress={()=>navigation.navigate('Suggestions')}>
                 <Text style={styles.design}>Suggestions</Text>

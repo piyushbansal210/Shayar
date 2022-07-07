@@ -5,7 +5,7 @@ const { width, height } = Dimensions.get('screen');
 
 export default function ProfilePost(props) {
     return (
-        <TouchableOpacity style={styles.container} onPress={()=>props.navigation.navigate('display',{userName:props.user.name})}>
+        <TouchableOpacity style={styles.container} onPress={()=>props.navigation.navigate(props.screen?props.screen:'display',{userName:props.user.name})}>
             <View style={[styles.profile, {
                 backgroundColor: props.data.post.backgroundColor
             }]}>
