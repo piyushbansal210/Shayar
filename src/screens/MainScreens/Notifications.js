@@ -29,7 +29,7 @@ export default function Notifications() {
     return (
         <SafeAreaView style={styles.container}>
             <ScrollView>
-                <SB style="light" />
+                <SB style="dark" />
                 <Notify data={fakePost2}/>
                 <Notify data={notify2}/>
 

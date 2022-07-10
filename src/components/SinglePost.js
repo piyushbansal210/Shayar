@@ -5,6 +5,7 @@ import { Entypo } from '@expo/vector-icons';
 import { FontAwesome } from '@expo/vector-icons';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 import { Ionicons } from '@expo/vector-icons';
+import { StatusBar } from 'expo-status-bar';
 
 
 const { width, height } = Dimensions.get('screen');
@@ -33,7 +34,7 @@ export default function SinglePost(props) {
                     setModalVisible(!modalVisible);
                 }}
             >
-
+                <StatusBar style={"dark"} />
                 <View style={styles.centeredView}>
                     <Entypo name="cross" size={40} color="white" style={{ alignSelf: 'flex-end', margin: 15 }} onPress={() => setModalVisible(!modalVisible)} />
                     <View style={styles.modalView}>

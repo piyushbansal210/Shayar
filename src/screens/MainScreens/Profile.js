@@ -161,7 +161,7 @@ const user = {
 export default function Profile({navigation}) {
     return (
         <SafeAreaView style={styles.container}>
-            <SB style="light" />
+            <SB style="dark" />
             
             <FlatList
                 data={posts}

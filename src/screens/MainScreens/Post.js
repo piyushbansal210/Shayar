@@ -17,7 +17,7 @@ const postSchema = Yup.object().shape({
 export default function Post({ navigation }) {
     return (
         <SafeAreaView style={styles.container}>
-            <SB style="light" />
+            <SB style="dark" />
             <Formik
                 initialValues={{
                     Title: '',

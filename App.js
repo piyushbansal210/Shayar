@@ -1,8 +1,10 @@
 import { useFonts } from 'expo-font';
 
 import MainStack from './src/navigation/MainStack';
-
+import { StatusBar as SB } from 'expo-status-bar';
 import Splash from './src/screens/ExtraScreens/Splash'
+
+import {View, Text} from 'react-native'
 
 export default function App() {
 
@@ -19,6 +21,9 @@ export default function App() {
     return null;
   }
   return (
-    <MainStack />
+    <View style={{flex:1}}>
+      <SB style="dark" backgroundColor='white'/>
+      <MainStack />
+    </View>
   );
 }

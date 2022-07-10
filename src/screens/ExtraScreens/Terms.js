@@ -16,7 +16,7 @@ export default function Terms() {
       {
         general.map((item, index) => {
           return (
-            <View style={{ flexDirection: 'row', alignItems: 'flex-start' }}>
+            <View key={index} style={{ flexDirection: 'row', alignItems: 'flex-start' }}>
               <Text style={[styles.detail, { flex: 1 }]}>{item}</Text>
             </View>
           )
@@ -27,7 +27,7 @@ export default function Terms() {
       {
         rights.map((item, index) => {
           return (
-            <View style={{ flexDirection: 'row', alignItems: 'flex-start' }}>
+            <View key={index} style={{ flexDirection: 'row', alignItems: 'flex-start' }}>
               <Text style={[styles.detail, { flex: 1 }]}>{item}</Text>
             </View>
           )
